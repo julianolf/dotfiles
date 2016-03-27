@@ -20,7 +20,9 @@ mkdir -p ~/.old-dotfiles/tmux ~/.old-dotfiles/vim ~/.old-dotfiles/zsh
 [ -d ~/.vim/colors/ ] && mv ~/.vim/colors/ ~/.old-dotfiles/vim/
 
 # Create the symlinks
-ln -s $(pwd -P)/tmux/tmux.conf ~/.tmux.conf
-ln -s $(pwd -P)/vim/vimrc ~/.vimrc
-ln -s $(pwd -P)/vim ~/.vim
-ln -s $(pwd -P)/zsh/zshrc ~/.zshrc
+DOTFILES_DIR=$(pwd -P);
+
+ln -s $DOTFILES_DIR/tmux/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES_DIR/vim/vimrc ~/.vimrc
+ln -s $DOTFILES_DIR/vim ~/.vim
+ln -s $DOTFILES_DIR/zsh/zshrc ~/.zshrc
