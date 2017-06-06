@@ -15,8 +15,5 @@ brew install vim --override-system-vi
 # Install some other useful tools.
 brew install tmux htop links git-flow python3
 
-# Install zsh and set it as the default command line shell.
-brew install zsh zsh-completions
-
 # Remove outdated versions from the cellar.
 brew cleanup

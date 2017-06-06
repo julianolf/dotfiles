@@ -20,11 +20,6 @@ if which brew > /dev/null; then
 	if [ -d "$(brew --prefix coreutils)/libexec/gnubin" ]; then
 		export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 	fi;
-
-	# Is zsh available? So let's install oh-my-zsh package too.
-	if [ -d "$(brew --prefix zsh)/" ]; then
-		sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	fi;
 fi;
 
 # Install Pathogen VIM plugin
