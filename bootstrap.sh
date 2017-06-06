@@ -5,12 +5,15 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-	# rsync	--exclude ".git/" \
-	# 		--exclude ".DS_Store" \
-	# 		--exclude "bootstrap.sh" \
-	# 		--exclude "README.md" \
-	# 		--exclude "LICENSE" \
-	# 		-avh --no-perms . ~;
+	rsync	--exclude ".git/" \
+			--exclude ".gitignore" \
+			--exclude ".gitmodules" \
+			--exclude ".editorconfig" \
+			--exclude ".DS_Store" \
+			--exclude "README.md" \
+			--exclude "LICENSE" \
+			--exclude "*.sh" \
+			-avh --no-perms . ~;
 
 	# Choose proper installation script
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then

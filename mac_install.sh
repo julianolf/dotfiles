@@ -77,8 +77,5 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Prevent Photos from opening automatically when devices are plugged in.
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-## Finally link all dotfiles
-source ./linker.sh
-
 # That's all :)
 echo "Done. Note that some of these changes requires you to reopen some applications or even logout/restart the system to take effect."
