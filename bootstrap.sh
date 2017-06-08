@@ -13,6 +13,7 @@ function doIt() {
 			--exclude "README.md" \
 			--exclude "LICENSE" \
 			--exclude "*.sh" \
+			--exclude "awesome-terminal-fonts" \
 			-avh --no-perms . ~;
 
 	# Choose proper installation script
