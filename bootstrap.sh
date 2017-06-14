@@ -5,14 +5,18 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-	rsync	--exclude ".git/" \
+	rsync	--exclude ".git" \
 			--exclude ".gitignore" \
 			--exclude ".gitmodules" \
 			--exclude ".editorconfig" \
 			--exclude ".DS_Store" \
 			--exclude "README.md" \
 			--exclude "LICENSE" \
-			--exclude "*.sh" \
+			--exclude "apt.sh" \
+			--exclude "bootstrap.sh" \
+			--exclude "brew.sh" \
+			--exclude "linux_install.sh" \
+			--exclude "mac_install.sh" \
 			--exclude "awesome-terminal-fonts" \
 			-avh --no-perms . ~;
 
