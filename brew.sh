@@ -4,7 +4,7 @@
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install more recent versions of VIM.
 brew install vim --with-override-system-vi
