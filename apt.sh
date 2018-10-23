@@ -4,4 +4,4 @@
 sudo apt update
 
 # Install some useful tools.
-sudo apt install vim tmux htop links git-flow irssi
+sudo apt install vim tmux htop links git-flow irssi pipenv

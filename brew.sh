@@ -10,7 +10,7 @@ brew upgrade
 brew install vim --with-override-system-vi
 
 # Install some other useful tools.
-brew install tmux htop links git-flow python3 irssi
+brew install tmux htop links git-flow python3 irssi pipenv
 
 # Remove outdated versions from the cellar.
 brew cleanup
