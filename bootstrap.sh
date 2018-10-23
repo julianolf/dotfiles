@@ -17,7 +17,6 @@ function doIt() {
 			--exclude "brew.sh" \
 			--exclude "linux_install.sh" \
 			--exclude "mac_install.sh" \
-			--exclude "awesome-terminal-fonts" \
 			-avh --no-perms . ~;
 
 	# Choose proper installation script
