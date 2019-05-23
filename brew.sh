@@ -6,11 +6,11 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Install some other useful tools.
+brew install tmux htop links git-flow irssi zlib python3 pipenv elixir rbenv
+
 # Install more recent versions of VIM.
 brew install vim --with-override-system-vi
-
-# Install some other useful tools.
-brew install tmux htop links git-flow python3 irssi pipenv
 
 # Remove outdated versions from the cellar.
 brew cleanup
