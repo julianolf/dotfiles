@@ -6,6 +6,9 @@ filetype plugin indent on
 syntax on
 colorscheme molokai
 
+set nocompatible
+set path+=**
+set wildmenu
 set history=50
 set encoding=utf8
 set autoindent
