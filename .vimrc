@@ -11,7 +11,7 @@ set path+=**
 set wildmenu
 set history=50
 set encoding=utf8
-set autoindent
+set smartindent
 set expandtab
 set shiftwidth=4
 set tabstop=4
