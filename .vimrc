@@ -24,5 +24,6 @@ set showmatch
 set t_Co=256
 set t_ut=
 set laststatus=2
+set ruler
 
 map <F2> :NERDTreeToggle<CR>
