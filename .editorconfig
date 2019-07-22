@@ -1,10 +1,24 @@
 root = true
 
 [*]
-charset = utf-8
-indent_style = tab
 end_of_line = lf
 insert_final_newline = true
+
+[*.{py,rb,js,go,c,h,cpp,hpp,ex,exs}]
+charset = utf-8
 trim_trailing_whitespace = true
+
+[{m,M}akefile]
+indent_style = tab
+
+[*.{c,h,go}]
+indent_style = tab
+indent_size = 8
+
+[*.{py,cpp,hpp}]
+indent_style = space
 indent_size = 4
 
+[*.{rb,js,ex,exs,json,yaml,yml,html,xml,css}]
+indent_style = space
+indent_size = 2
