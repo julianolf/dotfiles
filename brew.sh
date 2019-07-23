@@ -7,10 +7,7 @@ brew update
 brew upgrade
 
 # Install some other useful tools.
-brew install tmux htop links git-flow irssi zlib python3 pipenv elixir rbenv
-
-# Install more recent versions of VIM.
-brew install vim --with-override-system-vi
+brew install openssl readline xz zlib pyenv tmux htop
 
 # Remove outdated versions from the cellar.
 brew cleanup
