@@ -20,11 +20,5 @@ fi;
 # Install Pathogen VIM plugin
 mkdir -p ~/.vim/autoload && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# Install CocoaPods tool
-#
-# TODO Fix: error while attempting to install CocoaPods without explicitly use `sudo`
-# even if I have already granted superuser privileges at the beginning of the script file
-sudo gem install cocoapods
-
 # That's all :)
 echo "Done. Note that some of these changes requires you to reopen some applications or even logout/restart the system to take effect."
