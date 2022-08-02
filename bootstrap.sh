@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-git pull origin master;
+git pull origin main;
 
 function doIt() {
 	rsync	--exclude ".git" \
