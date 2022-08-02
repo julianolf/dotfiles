@@ -1,32 +1,21 @@
-#!/usr/bin/env bash
-
-cd "$(dirname "${BASH_SOURCE}")";
+#!/usr/bin/env zsh
 
 git pull origin master;
 
 function doIt() {
 	rsync	--exclude ".git" \
-			--exclude ".gitignore" \
-			--exclude ".gitmodules" \
-			--exclude ".editorconfig" \
-			--exclude ".DS_Store" \
-			--exclude "README.md" \
-			--exclude "LICENSE" \
-			--exclude "apt.sh" \
-			--exclude "bootstrap.sh" \
-			--exclude "brew.sh" \
-			--exclude "linux_install.sh" \
-			--exclude "mac_install.sh" \
-			-avh --no-perms . ~;
+		--exclude ".gitignore" \
+		--exclude ".gitmodules" \
+		--exclude ".editorconfig" \
+		--exclude ".DS_Store" \
+		--exclude "README.md" \
+		--exclude "LICENSE" \
+		--exclude "bootstrap.sh" \
+		--exclude "brew.sh" \
+		--exclude "mac_install.sh" \
+		-avh --no-perms . ~;
 
-	# Choose proper installation script
-	if [[ "$OSTYPE" == "linux-gnu" ]]; then
-		source ./linux_install.sh;
-	elif [[ "$OSTYPE" == "darwin"* ]]; then
-		source ./mac_install.sh
-	else
-		echo "Sorry, OS not supported yet";
-	fi;
+	source ./mac_install.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -38,4 +27,5 @@ else
 		doIt;
 	fi;
 fi;
+
 unset doIt;
