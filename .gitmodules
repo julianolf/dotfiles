@@ -1,18 +1,21 @@
 [submodule "editorconfig-vim"]
-	path = .vim/bundle/editorconfig-vim
+	path = .vim/pack/julianolf/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "nerdtree"]
-	path = .vim/bundle/nerdtree
+	path = .vim/pack/julianolf/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "vim-airline"]
-	path = .vim/bundle/vim-airline
+	path = .vim/pack/julianolf/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim-airline-themes"]
-	path = .vim/bundle/vim-airline-themes
+	path = .vim/pack/julianolf/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
+	path = .vim/pack/julianolf/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "ale"]
+	path = .vim/pack/julianolf/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "vim-monokai-tasty"]
+	path = .vim/pack/julianolf/start/vim-monokai-tasty
+	url = https://github.com/patstockwell/vim-monokai-tasty.git
