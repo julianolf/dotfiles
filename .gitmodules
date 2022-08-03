@@ -19,3 +19,9 @@
 [submodule "vim-monokai-tasty"]
 	path = .vim/pack/julianolf/start/vim-monokai-tasty
 	url = https://github.com/patstockwell/vim-monokai-tasty
+[submodule "rust.vim"]
+	path = .vim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "tagbar"]
+	path = .vim/pack/plugins/start/tagbar
+	url = https://github.com/preservim/tagbar

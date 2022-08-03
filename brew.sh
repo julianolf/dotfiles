@@ -7,7 +7,7 @@ brew update
 brew upgrade
 
 # Install some other useful tools.
-brew install htop tmux neovim jq rgbds pyenv qemu awscli aws-sam-cli 
+brew install htop tmux neovim universal-ctags jq rgbds pyenv qemu awscli aws-sam-cli
 
 # Remove outdated versions from the cellar.
 brew cleanup

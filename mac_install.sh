@@ -6,6 +6,9 @@ echo "Running Mac OS installation";
 # Install Xcode command line tools
 xcode-select --install
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Use Homebrew for your own sanity
 $SHELL -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
