@@ -19,3 +19,4 @@ let g:airline_theme='monokai_tasty'
 let g:airline#extensions#ale#enabled=1
 let g:ale_lint_on_text_changed=0
 map <F2> :NERDTreeToggle<CR>
+map <F8> :TagbarToggle<CR>
