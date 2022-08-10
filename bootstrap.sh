@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+cd "$(dirname "${(%):-%x}")"
+
 git pull origin main;
 
 function doIt() {
