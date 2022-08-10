@@ -7,6 +7,7 @@ set wildmenu
 set history=50
 set smartindent
 set number
+set relativenumber
 set mouse=a
 set clipboard+=unnamedplus
 set cursorline
