@@ -4,7 +4,7 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{py,rb,js,go,c,h,cpp,hpp,ex,exs,rs,asm}]
+[*.{py,rb,js,go,c,h,cpp,hpp,asm,lua,rs,json,yaml,yml,toml,html,xml,css}]
 charset = utf-8
 trim_trailing_whitespace = true
 
@@ -19,6 +19,10 @@ indent_size = 8
 indent_style = space
 indent_size = 4
 
-[*.{rb,js,ex,exs,json,yaml,yml,html,xml,css}]
+[*.lua]
+indent_style = space
+indent_size = 3
+
+[*.{rb,js,json,yaml,yml,html,xml,css}]
 indent_style = space
 indent_size = 2
