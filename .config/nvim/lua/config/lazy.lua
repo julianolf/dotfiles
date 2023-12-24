@@ -15,16 +15,18 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
    spec = {
-      {"LazyVim/LazyVim", import = "lazyvim.plugins"},
-      {import = "plugins"},
+      {
+         "LazyVim/LazyVim",
+         import = "lazyvim.plugins",
+         opts = { colorscheme = "solarized-osaka" },
+      },
+      { import = "plugins" },
    },
    defaults = {
       lazy = false,
       version = false,
    },
-   checker = {
-      enabled = true
-   },
+   checker = { enabled = true },
    performance = {
       rtp = {
          disabled_plugins = {
