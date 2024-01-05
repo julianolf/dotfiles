@@ -4,14 +4,14 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{py,rb,js,go,c,h,cpp,hpp,asm,lua,rs,json,yaml,yml,toml,html,xml,css}]
+[*.{py,rb,js,go,c,h,cpp,hpp,asm,lua,rs,json,yaml,yml,toml,html,xml,css,sh}]
 charset = utf-8
 trim_trailing_whitespace = true
 
 [{m,M}akefile]
 indent_style = tab
 
-[*.{c,h,go,asm}]
+[*.{c,h,go,asm,sh}]
 indent_style = tab
 indent_size = 8
 
