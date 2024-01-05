@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 rsync	--exclude ".git" \
+	--exclude ".gitconfig" \
 	--exclude ".gitignore" \
 	--exclude ".DS_Store" \
 	--exclude "configure" \

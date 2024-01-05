@@ -1,0 +1,13 @@
+[user]
+	signingkey = ~/.ssh/id_rsa.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+[merge]
+	tool = nvimdiff2
+[mergetool]
+	prompt = false
+	keepBackup = false
