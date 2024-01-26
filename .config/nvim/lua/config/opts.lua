@@ -1,0 +1,11 @@
+vim.opt.backup = false
+vim.opt.clipboard = "unnamedplus"
+vim.opt.cursorline = true
+vim.opt.guicursor = ""
+vim.opt.nu = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
+vim.opt.smartindent = true
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.termguicolors = true
