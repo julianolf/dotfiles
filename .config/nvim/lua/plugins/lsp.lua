@@ -34,9 +34,10 @@ return {
             },
          })
 
+         lspconfig.gopls.setup({ capabilities = capabilities, on_attach = on_attach })
          lspconfig.pyright.setup({ capabilities = capabilities,  on_attach = on_attach })
          lspconfig.rust_analyzer.setup({ capabilities = capabilities, on_attach = on_attach })
-         lspconfig.gopls.setup({ capabilities = capabilities, on_attach = on_attach })
+         lspconfig.terraformls.setup({ capabilities = capabilities, on_attach = on_attach })
       end,
    },
    {
@@ -47,6 +48,7 @@ return {
             "gopls",
             "lua_ls",
             "pyright",
+            "terraformls",
             "rust_analyzer",
          },
       },
