@@ -63,6 +63,7 @@ return {
             )
          end
          require("nvim-treesitter.configs").setup(opts)
+         vim.treesitter.language.register("python", "pyrex")
       end,
    }
 }
