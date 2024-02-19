@@ -7,7 +7,7 @@ ITERM2_DIR=".config/iterm2"
 
 cd "$SCRIPT_DIR"
 
-rsync	--exclude ".git" \
+rsync --exclude ".git" \
 	--exclude ".gitconfig" \
 	--exclude ".gitignore" \
 	--exclude ".DS_Store" \
@@ -17,6 +17,6 @@ rsync	--exclude ".git" \
 	--exclude "$ITERM2_DIR" \
 	-avh --no-perms . ~
 
-[[ "$(defaults read com.googlecode.iterm2 LoadPrefsFromCustomFolder)" != "1" ]] \
-	&& defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$SCRIPT_DIR/$ITERM2_DIR" \
-	&& defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+[[ "$(defaults read com.googlecode.iterm2 LoadPrefsFromCustomFolder)" != "1" ]] &&
+	defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$SCRIPT_DIR/$ITERM2_DIR" &&
+	defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
