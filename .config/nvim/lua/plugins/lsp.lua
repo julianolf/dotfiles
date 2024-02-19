@@ -64,6 +64,8 @@ return {
       build = ":MasonUpdate",
       opts = {
          ensure_installed = {
+            "black",
+            "isort",
             "shfmt",
             "stylua",
          },
