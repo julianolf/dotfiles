@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+set -e
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+TAPS_FILE="$SCRIPT_DIR/taps.txt"
+FORMULAE_FILE="$SCRIPT_DIR/formulae.txt"
+
+if [[ -f "$TAPS_FILE" ]]; then
+	while IFS= read -r line; do
+		brew tap "$line"
+	done <"$TAPS_FILE"
+fi
+
+brew update
+
+if [[ -f "$FORMULAE_FILE" ]]; then
+	xargs -I {} brew install {} <"$FORMULAE_FILE"
+fi
+
+brew cleanup

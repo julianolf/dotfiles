@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+set -e
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+cd "$SCRIPT_DIR"
+
+xcode-select -p >/dev/null 2>&1
+
+if [[ $? -ne 0 ]]; then
+	xcode-select --install
+	sudo /usr/sbin/DevToolsSecurity -enable
+	sudo dscl . append /Groups/_developer GroupMembership $(whoami)
+fi
+
+if ! command -v brew >/dev/null 2>&1; then
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+./brewery/pour

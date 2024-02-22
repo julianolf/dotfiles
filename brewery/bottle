@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+set -e
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+TAPS_FILE="$SCRIPT_DIR/taps.txt"
+FORMULAE_FILE="$SCRIPT_DIR/formulae.txt"
+
+brew tap >$TAPS_FILE
+brew list --full-name -1 >$FORMULAE_FILE
+
+wc -l $TAPS_FILE $FORMULAE_FILE
