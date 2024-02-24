@@ -47,12 +47,9 @@ return {
                automatic_installation = true,
                ensure_installed = {
                   "delve",
+                  "python",
                },
             },
-         },
-         {
-            "leoluz/nvim-dap-go",
-            opts = {},
          },
       },
       -- stylua: ignore
@@ -69,7 +66,38 @@ return {
          { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
          { "<leader>ds", function() require("dap").session() end, desc = "Session" },
          { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-         { "<leader>dT", function() require("dap-"..vim.bo.filetype).debug_test() end, desc = "Debug Test" },
       },
+   },
+   {
+      "leoluz/nvim-dap-go",
+      dependencies = "mfussenegger/nvim-dap",
+      ft = "go",
+      config = function()
+         require("dap-go").setup()
+
+         -- stylua: ignore
+         vim.keymap.set("n", "<leader>dT", function() require("dap-go").debug_test() end, { desc = "Debug Test" })
+      end,
+   },
+   {
+      "mfussenegger/nvim-dap-python",
+      ft = "python",
+      config = function()
+         local path = nil
+         local ok, registry = pcall(require, "mason-registry")
+
+         if ok and registry.is_installed("debugpy") then
+            local pkg = registry.get_package("debugpy")
+            local sep = package.config:sub(1, 1)
+            path = table.concat({ pkg:get_install_path(), "venv", "bin", "python" }, sep)
+         end
+
+         require("dap-python").setup(path)
+
+         -- stylua: ignore start
+         vim.keymap.set("n", "<leader>dT", function() require("dap-python").test_method() end, { desc = "Debug Test Method" })
+         vim.keymap.set("n", "<leader>dA", function() require("dap-python").test_class() end, { desc = "Debug Test Class" })
+         -- stylua: ignore end
+      end,
    },
 }
