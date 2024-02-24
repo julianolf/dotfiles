@@ -11,6 +11,7 @@ rsync --exclude ".git" \
 	--exclude ".gitconfig" \
 	--exclude ".gitignore" \
 	--exclude ".DS_Store" \
+	--exclude "Brewfile" \
 	--exclude "install" \
 	--exclude "configure" \
 	--exclude "LICENSE" \

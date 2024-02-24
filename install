@@ -17,3 +17,5 @@ fi
 if ! command -v brew >/dev/null 2>&1; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+brew bundle -v --no-lock --file Brewfile
