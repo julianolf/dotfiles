@@ -19,6 +19,7 @@ rsync --exclude ".git" \
 	--exclude "$ITERM2_DIR" \
 	-avh --no-perms . ~
 
-[[ "$(defaults read com.googlecode.iterm2 LoadPrefsFromCustomFolder)" != "1" ]] &&
-	defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$SCRIPT_DIR/$ITERM2_DIR" &&
+if [ "$(defaults read com.googlecode.iterm2 LoadPrefsFromCustomFolder)" != "1" ]; then
+	defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$SCRIPT_DIR/$ITERM2_DIR"
 	defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+fi
