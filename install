@@ -2,20 +2,55 @@
 
 set -e
 
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+cd "$(dirname "$(readlink -f "$0")")"
 
-cd "$SCRIPT_DIR"
+goto_url() {
+	echo "Would you like to go to $1? (y/n)"
+	read -r reply
 
-xcode-select -p >/dev/null 2>&1
+	if [ "$reply" = "y" ]; then
+		open "$1"
+	fi
+}
 
-if [[ $? -ne 0 ]]; then
+find_app() {
+	query="kMDItemKind == 'Application' && kMDItemDisplayName == '$1'"
+
+	if [ -z "$(mdfind -onlyin /Applications "$query")" ]; then
+		echo "$1 not installed."
+		return 1
+	fi
+
+	return 0
+}
+
+if ! xcode-select -p >/dev/null 2>&1; then
 	xcode-select --install
 	sudo /usr/sbin/DevToolsSecurity -enable
-	sudo dscl . append /Groups/_developer GroupMembership $(whoami)
+	sudo dscl . append /Groups/_developer GroupMembership "$(whoami)"
 fi
 
 if ! command -v brew >/dev/null 2>&1; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew bundle -v --no-lock --file Brewfile
+if ! brew bundle check --no-upgrade >/dev/null 2>&1; then
+	brew bundle -v --no-lock --file Brewfile
+fi
+
+if ! command -v rustup >/dev/null 2>&1; then
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
+if ! command -v go >/dev/null 2>&1; then
+	echo "Go not installed."
+	goto_url "https://go.dev"
+fi
+
+if ! find_app "iTerm"; then
+	goto_url "https://iterm2.com"
+fi
+
+if ! find_app "Docker"; then
+	goto_url "https://docker.com"
+fi
