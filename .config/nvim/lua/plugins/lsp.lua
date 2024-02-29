@@ -15,11 +15,11 @@ return {
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0, desc = "Go-to definition" })
             vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0, desc = "Go-to type definition" })
             vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0, desc = "Go-to implementaion" })
-            vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, { buffer = 0, desc = "Go-to next issue" })
-            vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, { buffer = 0, desc = "Go-to previous issue" })
+            vim.keymap.set("n", "<leader>ni", vim.diagnostic.goto_next, { buffer = 0, desc = "Go-to next issue" })
+            vim.keymap.set("n", "<leader>pi", vim.diagnostic.goto_prev, { buffer = 0, desc = "Go-to previous issue" })
             vim.keymap.set(
                "n",
-               "<leader>dl",
+               "<leader>Ti",
                "<cmd>Telescope diagnostics<cr>",
                { buffer = 0, desc = "Fuzzy find issues" }
             )
