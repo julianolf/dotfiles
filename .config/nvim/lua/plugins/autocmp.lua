@@ -30,15 +30,12 @@ return {
                   fallback()
                end,
             }),
-            sources = cmp.config.sources(
-               {
-                  { name = "nvim_lsp" },
-                  { name = "path" },
-               },
-               {
-                  { name = "buffer" },
-               }
-            ),
+            sources = cmp.config.sources({
+               { name = "nvim_lsp" },
+               { name = "path" },
+            }, {
+               { name = "buffer" },
+            }),
             sorting = defaults.sorting,
          }
       end,
@@ -57,13 +54,13 @@ return {
          {
             "hrsh7th/nvim-cmp",
             opts = function(_, opts)
-                opts.snippet = {
-                   expand = function(args)
-                      require("luasnip").lsp_expand(args.body)
-                   end,
-                }
+               opts.snippet = {
+                  expand = function(args)
+                     require("luasnip").lsp_expand(args.body)
+                  end,
+               }
 
-                table.insert(opts.sources, { name = "luasnip" })
+               table.insert(opts.sources, { name = "luasnip" })
             end,
          },
       },
@@ -86,14 +83,14 @@ return {
             function()
                require("luasnip").jump(1)
             end,
-            mode = "s"
+            mode = "s",
          },
          {
             "<s-tab>",
             function()
                require("luasnip").jump(-1)
             end,
-            mode = { "i", "s" }
+            mode = { "i", "s" },
          },
       },
    },
