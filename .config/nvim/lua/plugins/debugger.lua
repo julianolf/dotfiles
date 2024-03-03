@@ -46,6 +46,7 @@ return {
             opts = {
                automatic_installation = true,
                ensure_installed = {
+                  "codelldb",
                   "delve",
                   "python",
                },
@@ -99,5 +100,11 @@ return {
          vim.keymap.set("n", "<leader>dA", function() require("dap-python").test_class() end, { desc = "Debug Test Class" })
          -- stylua: ignore end
       end,
+   },
+   {
+      dir = "~/github/julianolf/nvim-dap-lldb",
+      dependencies = "mfussenegger/nvim-dap",
+      ft = { "c", "cpp", "rust" },
+      opts = {},
    },
 }
