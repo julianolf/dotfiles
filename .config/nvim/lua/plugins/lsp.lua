@@ -12,17 +12,9 @@ return {
 
          local on_attach = function()
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0, desc = "Show documentation" })
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0, desc = "Go-to definition" })
-            vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0, desc = "Go-to type definition" })
-            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0, desc = "Go-to implementaion" })
-            vim.keymap.set("n", "<leader>ni", vim.diagnostic.goto_next, { buffer = 0, desc = "Go-to next issue" })
-            vim.keymap.set("n", "<leader>pi", vim.diagnostic.goto_prev, { buffer = 0, desc = "Go-to previous issue" })
-            vim.keymap.set(
-               "n",
-               "<leader>Ti",
-               "<cmd>Telescope diagnostics<cr>",
-               { buffer = 0, desc = "Fuzzy find issues" }
-            )
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0, desc = "Go to definition" })
+            vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0, desc = "Go to type definition" })
+            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0, desc = "Go to implementaion" })
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0, desc = "LSP Rename" })
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0, desc = "LSP code actions" })
          end
