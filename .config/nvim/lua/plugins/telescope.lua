@@ -13,6 +13,7 @@ return {
          vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
          vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
          vim.keymap.set("n", "<leader>fi", builtin.diagnostics, { desc = "Telescope diagnostics" })
+         vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope keymaps" })
       end,
    },
 }
