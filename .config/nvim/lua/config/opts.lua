@@ -14,7 +14,7 @@ vim.opt.swapfile = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.list = true
-vim.opt.listchars = { tab = "› ", lead = "·", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
 vim.opt.termguicolors = true
