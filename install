@@ -47,6 +47,11 @@ if ! command -v go >/dev/null 2>&1; then
 	goto_url "https://go.dev"
 fi
 
+if ! command -v npm >/dev/null 2>&1; then
+	echo "NodeJS not installed."
+	goto_url "https://nodejs.org"
+fi
+
 if ! find_app "iTerm"; then
 	goto_url "https://iterm2.com"
 fi
