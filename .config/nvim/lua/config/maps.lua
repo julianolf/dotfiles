@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.netrw_banner = 0
 
 vim.keymap.set("n", "<leader>fd", vim.cmd.Ex, { desc = "Explore directory of current file" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
