@@ -5,6 +5,7 @@ return {
          "hrsh7th/cmp-nvim-lsp",
          "hrsh7th/cmp-buffer",
          "hrsh7th/cmp-path",
+         "onsails/lspkind.nvim",
          {
             "zbirenbaum/copilot.lua",
             dependencies = {
@@ -24,6 +25,8 @@ return {
          local cmp = require("cmp")
          local defaults = require("cmp.config.default")()
          table.insert(defaults.sorting, 0, require("copilot_cmp.comparators").prioritize)
+
+         local lspkind = require("lspkind")
 
          return {
             completion = { completeopt = "menu,menuone,noinsert" },
@@ -52,6 +55,18 @@ return {
                { name = "buffer" },
             }),
             sorting = defaults.sorting,
+            formatting = {
+               format = lspkind.cmp_format({
+                  mode = "symbol",
+                  maxwidth = 50,
+                  ellipsis = "…",
+                  show_labelDetails = true,
+                  symbol_map = { Copilot = "" },
+                  before = function(_, vim_item)
+                     return vim_item
+                  end,
+               }),
+            },
          }
       end,
       config = function(_, opts)
