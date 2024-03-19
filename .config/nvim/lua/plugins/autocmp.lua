@@ -5,11 +5,25 @@ return {
          "hrsh7th/cmp-nvim-lsp",
          "hrsh7th/cmp-buffer",
          "hrsh7th/cmp-path",
+         {
+            "zbirenbaum/copilot.lua",
+            dependencies = {
+               "zbirenbaum/copilot-cmp",
+               config = function()
+                  require("copilot_cmp").setup()
+               end,
+            },
+            opts = {
+               suggestion = { enabled = false },
+               panel = { enabled = false },
+            },
+         },
       },
       event = "InsertEnter",
       opts = function()
          local cmp = require("cmp")
          local defaults = require("cmp.config.default")()
+         table.insert(defaults.sorting, 0, require("copilot_cmp.comparators").prioritize)
 
          return {
             completion = { completeopt = "menu,menuone,noinsert" },
@@ -31,6 +45,7 @@ return {
                end,
             }),
             sources = cmp.config.sources({
+               { name = "copilot" },
                { name = "nvim_lsp" },
                { name = "path" },
             }, {
@@ -93,9 +108,5 @@ return {
             mode = { "i", "s" },
          },
       },
-   },
-   {
-      "github/copilot.vim",
-      enabled = false,
    },
 }
