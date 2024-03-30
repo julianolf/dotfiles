@@ -160,7 +160,9 @@ local lazyplugins = {
                   return "]c"
                end
 
-               vim.schedule(function() gs.next_hunk() end)
+               vim.schedule(function()
+                  gs.next_hunk()
+               end)
 
                return "<Ignore>"
             end
@@ -170,11 +172,14 @@ local lazyplugins = {
                   return "[c"
                end
 
-               vim.schedule(function() gs.prev_hunk() end)
+               vim.schedule(function()
+                  gs.prev_hunk()
+               end)
 
                return "<Ignore>"
             end
 
+            -- stylua: ignore start
             map("n", "]c", next_hunk, { expr = true, desc = "Git go to next hunk" })
             map("n", "[c", prev_hunk, { expr = true, desc = "Git go to previous hunk" })
             map("n", "<leader>hs", gs.stage_hunk, { desc = "Git stage hunk" })
@@ -191,6 +196,7 @@ local lazyplugins = {
             map("n", "<leader>hD", function() gs.diffthis("~") end, { desc = "Git diff last commit" })
             map("n", "<leader>td", gs.toggle_deleted, { desc = "Git toggle show deleted" })
             map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Git select hunk" })
+            -- stylua: ignore stop
          end,
       },
    },
@@ -370,7 +376,7 @@ local lazyplugins = {
             end,
          },
       },
-      config = function ()
+      config = function()
          local function map(kmap, cmd, desc)
             vim.keymap.set("n", kmap, cmd, { desc = "DAP: " .. desc })
          end
@@ -390,7 +396,8 @@ local lazyplugins = {
 
          local dap = require("dap")
 
-         map("<leader>dB", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "Breakpoint condition")
+         -- stylua: ignore start
+         map("<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, "Breakpoint condition")
          map("<leader>db", dap.toggle_breakpoint, "Toggle breakpoint")
          map("<leader>dC", dap.run_to_cursor, "Run to cursor")
          map("<leader>dc", dap.continue, "Continue")
@@ -402,12 +409,13 @@ local lazyplugins = {
          map("<leader>dr", dap.repl.toggle, "Toggle REPL")
          map("<leader>ds", dap.session, "Session")
          map("<leader>dt", dap.terminate, "Terminate")
+         -- stylua: ignore stop
 
          local debuggers = { "codelldb", "python", "delve" }
 
          require("mason").setup()
          require("mason-nvim-dap").setup({ ensure_installed = debuggers })
-      end
+      end,
    },
    {
       "julianolf/nvim-dap-lldb",
@@ -429,10 +437,12 @@ local lazyplugins = {
             path = table.concat({ pkg:get_install_path(), "venv", "bin", "python" }, sep)
          end
 
-         require("dap-python").setup(path)
+         local dap_python = require("dap-python")
 
-         vim.keymap.set("n", "<leader>dT", function() require("dap-python").test_method() end, { desc = "DAP: Debug Test Method" })
-         vim.keymap.set("n", "<leader>dA", function() require("dap-python").test_class() end, { desc = "DAP: Debug Test Class" })
+         dap_python.setup(path)
+
+         vim.keymap.set("n", "<leader>dT", dap_python.test_method, { desc = "DAP: Debug Test Method" })
+         vim.keymap.set("n", "<leader>dA", dap_python.test_class, { desc = "DAP: Debug Test Class" })
       end,
    },
    {
