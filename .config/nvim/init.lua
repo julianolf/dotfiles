@@ -210,19 +210,24 @@ local lazyplugins = {
          "hrsh7th/cmp-path",
          "hrsh7th/cmp-buffer",
          "hrsh7th/cmp-nvim-lsp",
-         "saadparwaiz1/cmp_luasnip",
          "onsails/lspkind.nvim",
-         "zbirenbaum/copilot-cmp",
          {
-            "zbirenbaum/copilot.lua",
-            opts = {
-               suggestion = { enabled = false },
-               panel = { enabled = false },
+            "zbirenbaum/copilot-cmp",
+            dependencies = {
+               "zbirenbaum/copilot.lua",
+               opts = {
+                  suggestion = { enabled = false },
+                  panel = { enabled = false },
+               },
             },
+            opts = {},
          },
          {
-            "L3MON4D3/LuaSnip",
-            build = "make install_jsregexp",
+            "saadparwaiz1/cmp_luasnip",
+            dependencies = {
+               "L3MON4D3/LuaSnip",
+               build = "make install_jsregexp",
+            },
          },
       },
       event = "InsertEnter",
