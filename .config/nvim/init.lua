@@ -449,6 +449,12 @@ local lazyplugins = {
 
          dap_python.setup(path)
 
+         local uv = vim.uv or vim.loop
+
+         if uv.fs_stat(".vscode/launch.json") then
+            require("dap.ext.vscode").load_launchjs(nil, { debugpy = { "python" } })
+         end
+
          vim.keymap.set("n", "<leader>dT", dap_python.test_method, { desc = "DAP: Debug Test Method" })
          vim.keymap.set("n", "<leader>dA", dap_python.test_class, { desc = "DAP: Debug Test Class" })
       end,
