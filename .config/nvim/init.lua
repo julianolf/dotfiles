@@ -578,6 +578,7 @@ local lazyplugins = {
 
 -- Lazy configuration
 local lazyspecs = {
+   dev = { path = "~/github/julianolf" },
    performance = {
       rtp = {
          disabled_plugins = {
