@@ -427,9 +427,16 @@ local lazyplugins = {
    },
    {
       "julianolf/nvim-dap-lldb",
+      dev = true,
       dependencies = "mfussenegger/nvim-dap",
       ft = { "c", "cpp", "rust" },
-      opts = {},
+      config = function()
+         local dap_lldb = require("dap-lldb")
+
+         dap_lldb.setup()
+
+         vim.keymap.set("n", "<leader>dT", dap_lldb.debug_test, { desc = "DAP: Debug Test" })
+      end,
    },
    {
       "mfussenegger/nvim-dap-python",
