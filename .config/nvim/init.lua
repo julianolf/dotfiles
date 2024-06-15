@@ -427,7 +427,6 @@ local lazyplugins = {
    },
    {
       "julianolf/nvim-dap-lldb",
-      dev = true,
       dependencies = "mfussenegger/nvim-dap",
       ft = { "c", "cpp", "rust" },
       config = function()
