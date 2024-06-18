@@ -212,17 +212,6 @@ local lazyplugins = {
          "hrsh7th/cmp-nvim-lsp",
          "onsails/lspkind.nvim",
          {
-            "zbirenbaum/copilot-cmp",
-            dependencies = {
-               "zbirenbaum/copilot.lua",
-               opts = {
-                  suggestion = { enabled = false },
-                  panel = { enabled = false },
-               },
-            },
-            opts = {},
-         },
-         {
             "saadparwaiz1/cmp_luasnip",
             dependencies = {
                "L3MON4D3/LuaSnip",
@@ -236,8 +225,6 @@ local lazyplugins = {
          luasnip.config.setup({})
 
          local defaults = require("cmp.config.default")()
-         table.insert(defaults.sorting, 0, require("copilot_cmp.comparators").prioritize)
-
          local lspkind = require("lspkind")
          local cmp = require("cmp")
 
@@ -258,7 +245,6 @@ local lazyplugins = {
                ["<C-e>"] = cmp.mapping.abort(),
             }),
             sources = {
-               { name = "copilot" },
                { name = "nvim_lsp" },
                { name = "luasnip" },
                { name = "path" },
@@ -271,7 +257,7 @@ local lazyplugins = {
                   maxwidth = 50,
                   ellipsis = "…",
                   show_labelDetails = true,
-                  symbol_map = { Copilot = "" },
+                  symbol_map = {},
                   before = function(_, vim_item)
                      return vim_item
                   end,
