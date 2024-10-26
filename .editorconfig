@@ -23,6 +23,6 @@ indent_size = 4
 indent_style = space
 indent_size = 3
 
-[*.{rb,js,json,yaml,yml,html,xml,css}]
+[*.{rb,js,json,yaml,yml,toml,html,xml,css}]
 indent_style = space
 indent_size = 2
