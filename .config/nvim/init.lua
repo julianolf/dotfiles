@@ -321,6 +321,7 @@ local lazyplugins = {
             gopls = {},
             pyright = {},
             rust_analyzer = {},
+            taplo = {},
             terraformls = {},
             lua_ls = {
                settings = {
@@ -490,6 +491,7 @@ local lazyplugins = {
             python = { "ruff_format", "ruff_fix" },
             rust = { "rustfmt" },
             sh = { "shfmt" },
+            toml = { "taplo" },
             terraform = { "terraform_fmt" },
          },
          format_on_save = { timeout_ms = 500, lsp_fallback = true },
