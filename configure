@@ -8,6 +8,7 @@ ITERM2_DIR=".config/iterm2"
 cd "$SCRIPT_DIR"
 
 rsync --exclude ".git" \
+	--exclude "imgs" \
 	--exclude ".gitconfig" \
 	--exclude ".gitignore" \
 	--exclude ".DS_Store" \
