@@ -1,5 +1,7 @@
 bold-is-bright = true
 cursor-style = block
+keybind = super+d=new_split:down
+keybind = super+shift+d=new_split:right
 mouse-hide-while-typing = true
 quit-after-last-window-closed = true
 shell-integration-features = no-cursor
