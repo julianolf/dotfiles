@@ -115,6 +115,7 @@ local lazyplugins = {
             "vim",
             "vimdoc",
             "yaml",
+            "zig",
          },
       },
       config = function(_, opts)
@@ -323,6 +324,7 @@ local lazyplugins = {
             rust_analyzer = {},
             taplo = {},
             terraformls = {},
+            zls = {},
             lua_ls = {
                settings = {
                   Lua = {
@@ -493,6 +495,7 @@ local lazyplugins = {
             sh = { "shfmt" },
             toml = { "taplo" },
             terraform = { "terraform_fmt" },
+            zig = { "zigfmt" },
          },
          format_on_save = { timeout_ms = 500, lsp_fallback = true },
          formatters = {},
