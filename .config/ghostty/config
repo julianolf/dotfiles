@@ -3,5 +3,5 @@ cursor-style = block
 keybind = super+d=new_split:down
 keybind = super+shift+d=new_split:right
 mouse-hide-while-typing = true
-shell-integration-features = no-cursor
+shell-integration-features = sudo,no-cursor
 theme = light:rose-pine-dawn,dark:rose-pine
