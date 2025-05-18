@@ -272,8 +272,8 @@ local lazyplugins = {
    {
       "neovim/nvim-lspconfig",
       dependencies = {
-         "williamboman/mason.nvim",
-         "williamboman/mason-lspconfig.nvim",
+         "mason-org/mason.nvim",
+         "mason-org/mason-lspconfig.nvim",
          { "j-hui/fidget.nvim", opts = {} },
          { "folke/neodev.nvim", opts = {} },
       },
@@ -353,7 +353,7 @@ local lazyplugins = {
    {
       "mfussenegger/nvim-dap",
       dependencies = {
-         "williamboman/mason.nvim",
+         "mason-org/mason.nvim",
          "jay-babu/mason-nvim-dap.nvim",
          {
             "rcarriga/nvim-dap-ui",
@@ -431,18 +431,8 @@ local lazyplugins = {
       dependencies = "mfussenegger/nvim-dap",
       ft = "python",
       config = function()
-         local path = nil
-         local ok, registry = pcall(require, "mason-registry")
-
-         if ok and registry.is_installed("debugpy") then
-            local pkg = registry.get_package("debugpy")
-            local sep = package.config:sub(1, 1)
-            path = table.concat({ pkg:get_install_path(), "venv", "bin", "python" }, sep)
-         end
-
          local dap_python = require("dap-python")
-
-         dap_python.setup(path)
+         dap_python.setup("debugpy-adapter")
 
          local uv = vim.uv or vim.loop
 
