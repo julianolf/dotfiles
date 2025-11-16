@@ -494,13 +494,11 @@ local lazyplugins = {
 
    -- colorscheme
    {
-      "rose-pine/neovim",
-      name = "rose-pine",
+      "sonph/onehalf",
       priority = 1000,
-      opts = { dim_inactive_windows = true },
-      config = function(_, opts)
-         require("rose-pine").setup(opts)
-         vim.cmd([[colorscheme rose-pine]])
+      config = function(plugin)
+         vim.opt.rtp:append(plugin.dir .. "/vim")
+         vim.cmd([[colorscheme onehalfdark]])
       end,
    },
 
