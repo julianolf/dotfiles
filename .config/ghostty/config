@@ -4,4 +4,4 @@ keybind = super+d=new_split:down
 keybind = super+shift+d=new_split:right
 mouse-hide-while-typing = true
 shell-integration-features = sudo,no-cursor
-theme = light:Rose Pine Dawn,dark:Rose Pine
+theme = One Half Dark
