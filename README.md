@@ -11,5 +11,6 @@ Here you can find configurations for:
 - git
 - homebrew
 - neovim
+- starship
 - tmux
 - zsh
