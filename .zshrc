@@ -2,6 +2,10 @@ alias ls="ls -Gh"
 alias vi="nvim"
 alias vim="nvim"
 
+if command -v starship 1>/dev/null 2>&1; then
+	eval "$(starship init zsh)"
+fi
+
 if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv init --path)"
 fi

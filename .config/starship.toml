@@ -1,0 +1,72 @@
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$c\
+$cpp\
+$cmake\
+$golang\
+$helm\
+$lua\
+$python\
+$ruby\
+$rust\
+$terraform\
+$zig\
+$jobs\
+$container\
+$character"""
+
+command_timeout = 1000
+
+[directory]
+read_only = " 󰌾"
+fish_style_pwd_dir_length = 1
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+disabled = false
+
+[cmake]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[golang]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[package]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[terraform]
+symbol = " "
+format = 'via [$symbol$version $workspace]($style) '
+
+[zig]
+symbol = " "
