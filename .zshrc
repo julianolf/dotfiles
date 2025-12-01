@@ -1,6 +1,7 @@
 alias ls="ls -Gh"
 alias ll="ls -Glha"
 alias tree="tree -aC --gitignore -I .git/"
+alias tt="tree"
 alias vi="nvim"
 alias vim="nvim"
 
