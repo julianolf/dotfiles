@@ -52,10 +52,6 @@ if ! command -v npm >/dev/null 2>&1; then
 	goto_url "https://nodejs.org"
 fi
 
-if ! find_app "iTerm"; then
-	goto_url "https://iterm2.com"
-fi
-
 if ! find_app "Docker"; then
 	goto_url "https://docker.com"
 fi

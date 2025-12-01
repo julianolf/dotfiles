@@ -2,10 +2,7 @@
 
 set -e
 
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-ITERM2_DIR=".config/iterm2"
-
-cd "$SCRIPT_DIR"
+cd "$(dirname "$(readlink -f "$0")")"
 
 rsync --exclude ".git" \
 	--exclude "imgs" \
@@ -17,10 +14,4 @@ rsync --exclude ".git" \
 	--exclude "configure" \
 	--exclude "LICENSE" \
 	--exclude "README.md" \
-	--exclude "$ITERM2_DIR" \
 	-avh --no-perms . ~
-
-if [ "$(defaults read com.googlecode.iterm2 LoadPrefsFromCustomFolder)" != "1" ]; then
-	defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$SCRIPT_DIR/$ITERM2_DIR"
-	defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-fi
